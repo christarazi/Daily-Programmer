@@ -8,4 +8,7 @@ Source: https://wiki.python.org/moin/TimeComplexity
 * `dequeueFirst`            - O(1)
 * `count`                   - O(1)
 
+## Usage
+1. Run `main()` to see the queue in action.
+2. Run `test()` to see the time it takes to enqueue and dequeue 100,000 elements.
 
