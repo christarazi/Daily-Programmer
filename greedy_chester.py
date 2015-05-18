@@ -36,6 +36,7 @@ def run_kd_tree():
 		currentCoord = eval(str(new[0]))			# convert into tuple
 
 	end = timeit.default_timer()
+	fIn.close()
 
 	print("\nTotal distance traveled:", end='')
 	print(repr(totalDistance).rjust(25))
@@ -71,6 +72,7 @@ def run_brute_force():
 		coordinates.remove(currentCoord)			# acts as a loop counter
 
 	end = timeit.default_timer()
+	fIn.close()
 
 	print("\nTotal distance traveled:", end='')
 	print(repr(totalDistance).rjust(25))
