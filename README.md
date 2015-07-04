@@ -4,7 +4,7 @@ A VB solution to [/r/dailyprogrammer's easy problem #218](https://www.reddit.com
 ## Sample Runs
 
 ```shell-session
-Enter numbers: 123 286 196196871
+> Enter numbers: 123 286 196196871
 
 123 gets palindromic after 1 steps: 444
 286 gets palindromic after 23 steps: 8813200023188
