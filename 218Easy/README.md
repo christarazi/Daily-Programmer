@@ -1,6 +1,12 @@
 # Palindromic Numbers
 A C# solution to [/r/dailyprogrammer's easy problem #218](https://www.reddit.com/r/dailyprogrammer/comments/38yy9s/20150608_challenge_218_easy_making_numbers/).
 
+Run with:
+```shell-session
+$ mcs -r:System.Numerics.dll PalindromicNumbers.cs
+$ mono PalindromicNumbers.exe
+```
+
 ## Sample Runs
 
 ```shell-session
