@@ -6,60 +6,39 @@
 
 using namespace std;
 
-/*
+
 class ToDoList
 {
 	private:
 		map<string, vector<string>> toDoMap;
 	public:
-		void ToDoList() {}
+		ToDoList() {}
 
-		void addItem(string item)
+		// Recursive base case method for variadic templates.
+		map<string, vector<string>> addItem(string item, string category)
 		{
-			toDoMap[""].push_back(item);
+			toDoMap[category].push_back(item);
+			return toDoMap;
 		}
-	
+
+		// Recursing method for variadic templates.
+		// Args: template parameter pack 
+		// categories: function parameter pack
+		// Recursively builds the map as "categories..." iterates with each call.
 		template<typename... Args>
-		void addItem(string item, Args... category)
+		map<string, vector<string>> addItem(string item, string category, Args... categories)
 		{
-
+			toDoMap[category].push_back(item);
+			return addItem(toDoMap, item, categories...);
 		}
-}*/
 
-
-int adder(int first)
-{
-	cout << "First" << endl;
-	return first;
-}
-
-template<typename... Types>
-int adder(int first, Types ... rest)
-{
-	cout << "second" << endl;
-    return first + adder(rest...);
-}
-
-void addItem(map<string, vector<string>> & toDoMap, string item)
-{
-	toDoMap[""].push_back(item);
-}
-	
-template<typename... Args>
-void addItem(map<string, vector<string>> & toDoMap, string item, Args... category)
-{
-	//vector<string> a = {category...};
-	toDoMap.insert(make_pair(category, item)...);
-	cout << "Exiting fucn" << endl;
-}
+};
 
 int main()
 {
 	//cout << adder(1,4,10,30) << endl;
 
 	map<string, vector<string>> toDoMap;
-
-	addItem(toDoMap, "Testing this shit", "programming", "c++");
 
 	return 0;
 }
