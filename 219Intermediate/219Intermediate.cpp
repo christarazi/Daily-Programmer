@@ -32,6 +32,12 @@ class ToDoList
 			return addItem(toDoMap, item, categories...);
 		}
 
+		void viewList(string category)
+		{
+			for (auto&& elem : toDoMap[category])
+				cout << elem << endl;
+		}
+
 };
 
 int main()
