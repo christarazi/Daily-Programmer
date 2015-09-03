@@ -1,11 +1,11 @@
 #include <iostream>
 #include <string>
+#include <algorithm>
 #include <map>
 #include <vector>
 #include <utility>
 
 using namespace std;
-
 
 class ToDoList
 {
@@ -14,11 +14,13 @@ class ToDoList
 	public:
 		ToDoList() {}
 
-		// Recursive base case method for variadic templates.
-		map<string, vector<string>> addItem(string item, string category)
+		// Recursive base method for variadic templates.
+		void addItem(string item, string category)
 		{
+			// Transform category to lowercase for consistency.
+			transform(category.begin(), category.end(), category.begin(), ::tolower);
+
 			toDoMap[category].push_back(item);
-			return toDoMap;
 		}
 
 		// Recursing method for variadic templates.
@@ -26,25 +28,32 @@ class ToDoList
 		// categories: function parameter pack
 		// Recursively builds the map as "categories..." iterates with each call.
 		template<typename... Args>
-		map<string, vector<string>> addItem(string item, string category, Args... categories)
+		void addItem(string item, string category, Args... categories)
 		{
+			// Transform category to lowercase for consistency.
+			transform(category.begin(), category.end(), category.begin(), ::tolower);
+
 			toDoMap[category].push_back(item);
-			return addItem(toDoMap, item, categories...);
+			addItem(item, categories...);		// recursive call iterating thru categories.
 		}
 
 		void viewList(string category)
 		{
+			// Transform category to uppercase.
+			transform(category.begin(), category.end(), category.begin(), ::tolower);
+
+			cout << "----" << category << "----" << endl;
 			for (auto&& elem : toDoMap[category])
-				cout << elem << endl;
+				cout << " - " << elem << endl;
 		}
 
 };
 
 int main()
 {
-	//cout << adder(1,4,10,30) << endl;
-
-	map<string, vector<string>> toDoMap;
+	ToDoList td;
+	td.addItem("Testing", "c++", "programming", "test category");
+	td.viewList("test category");
 
 	return 0;
 }
