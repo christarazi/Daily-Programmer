@@ -19,6 +19,8 @@ Output: vector of strings holding the intersecting items.
 
 `.updateItem()`, `.viewList()` are self explanatory.
 
+`.removeItem()` goes through every item inserted in the to-do list until it matches the parameter. Vector `.erase()` takes an iterator to the position of the item to delete. So in this case, we go to the `i'th` position from the beginning of the vector.
+
 ## Sample Runs
 
 ```shell-session

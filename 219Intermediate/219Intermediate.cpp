@@ -117,6 +117,14 @@ class ToDoList
 						keyValPair.second[i] = newItem;
 		}
 
+		void removeItem(string item)
+		{
+			for (auto && keyValPair : toDoMap)
+				for (int i = 0; i < keyValPair.second.size(); i++)
+					if (keyValPair.second[i].compare(item) == 0)	
+						keyValPair.second.erase(keyValPair.second.begin()+i);
+		}
+
 		// Recursive variadic template view method.
 		template<typename... Args>
 		void viewList(Args... categories)
@@ -176,6 +184,7 @@ int main()
     td.addItem("Haskell's School of Music", "programming");
 
     td.addItem("Better faster stronger", "programming", "music", "life");
+    td.addItem("test delete", "programming", "music", "life");
 
 	td.updateItem("Create Sine Waves in C", "Create Sine Waves in Python");
 
@@ -183,6 +192,9 @@ int main()
 	td.viewList("music");
 	td.viewList("music", "programming");
 	td.viewList("life");
+	td.viewList("programming", "life", "music");
+
+	td.removeItem("test delete");
 	td.viewList("programming", "life", "music");
 	
 	return 0;
