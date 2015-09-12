@@ -24,7 +24,6 @@ Output: vector of strings holding the intersecting items.
 ## Sample Runs
 
 ```shell-session
-
 ----programming----
  - Go to work
  - Create Sine Waves in Python
@@ -33,6 +32,7 @@ Output: vector of strings holding the intersecting items.
  - Memory in C
  - Haskell's School of Music
  - Better faster stronger
+ - test delete
 
 ----music----
  - Create Sine Waves in Python
@@ -41,6 +41,42 @@ Output: vector of strings holding the intersecting items.
  - Memory in C
  - The use of the Melodic Minor Scale
  - Better faster stronger
+ - test delete
+
+----music & programming----
+ - A pixel is a pixel
+ - Better faster stronger
+ - Create Sine Waves in Python
+ - Memory in C
+ - test delete
+
+----life----
+ - Better faster stronger
+ - test delete
+
+----programming & life & music----
+ - Better faster stronger
+ - test delete
+
+----programming & life & music----
+ - Better faster stronger
+
+----programming----
+ - A pixel is a pixel
+ - Better faster stronger
+ - Create Sine Waves in Python
+ - Go to work
+ - Haskell's School of Music
+ - Memory in C
+ - The Scheme Programming Language
+
+----music----
+ - A pixel is a pixel
+ - Better faster stronger
+ - Create Sine Waves in Python
+ - Memory in C
+ - Modes in Folk Music
+ - The use of the Melodic Minor Scale
 
 ----music & programming----
  - A pixel is a pixel
@@ -50,9 +86,5 @@ Output: vector of strings holding the intersecting items.
 
 ----life----
  - Better faster stronger
-
-----programming & life & music----
- - Better faster stronger
-
 
 ```
